@@ -1,4 +1,4 @@
-# casestudy
+# case study
 MyRetail case study
 
 Case Study on MyRetail (Spring-boot with Tomcat, Spring-Data-Cassandra, Gradle, RestFul webservices)
