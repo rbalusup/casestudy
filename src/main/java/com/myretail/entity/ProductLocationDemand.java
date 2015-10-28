@@ -1,7 +1,6 @@
 package com.myretail.entity;
 
-import java.math.BigDecimal;
-import java.sql.Timestamp;
+import java.util.Date;
 
 import org.springframework.cassandra.core.PrimaryKeyType;
 import org.springframework.data.cassandra.mapping.Column;
@@ -21,16 +20,16 @@ public class ProductLocationDemand {
 	private String reservationId;
 
 	@Column(value="demand_qty")
-	private BigDecimal demandQty;
+	private Double demandQty;
 
 	@Column(value = "update_timestamp")
-	private Timestamp updateTimestamp;
+	private Date updateTimestamp;
 
 	public ProductLocationDemand() {
 		super();
 	}
 	
-	public ProductLocationDemand(String productId, String locationId, String reservationId, BigDecimal demandQty, Timestamp updateTimestamp) {
+	public ProductLocationDemand(String productId, String locationId, String reservationId, Double demandQty, Date updateTimestamp) {
 		super();
 		this.productId = productId;
 		this.locationId = locationId;
@@ -57,19 +56,19 @@ public class ProductLocationDemand {
 		this.reservationId = reservationId;
 	}
 
-	public Timestamp getUpdateTimestamp() {
+	public Date getUpdateTimestamp() {
 		return updateTimestamp;
 	}
 
-	public void setUpdateTimestamp(Timestamp updateTimestamp) {
+	public void setUpdateTimestamp(Date updateTimestamp) {
 		this.updateTimestamp = updateTimestamp;
 	}
 
-	public BigDecimal getDemandQty() {
+	public Double getDemandQty() {
 		return demandQty;
 	}
 
-	public void setDemandQty(BigDecimal demandQty) {
+	public void setDemandQty(Double demandQty) {
 		this.demandQty = demandQty;
 	}
 

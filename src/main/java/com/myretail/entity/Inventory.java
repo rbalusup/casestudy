@@ -1,7 +1,6 @@
 package com.myretail.entity;
 
-import java.math.BigDecimal;
-import java.sql.Timestamp;
+import java.util.Date;
 
 import org.springframework.cassandra.core.Ordering;
 import org.springframework.cassandra.core.PrimaryKeyType;
@@ -19,16 +18,16 @@ public class Inventory {
 	private String locationId;
 
 	@Column(value="avail_on_hand")
-	private BigDecimal availOnHand;
+	private Double availOnHand;
 
 	@Column(value = "avail_on_hand_sync_time")
-	private Timestamp availOnSyncTime;
+	private Date availOnSyncTime;
 
 	public Inventory() {
 		super();
 	}
 	
-	public Inventory(String productId, String locationId, BigDecimal availOnHand, Timestamp availOnSyncTime) {
+	public Inventory(String productId, String locationId, Double availOnHand, Date availOnSyncTime) {
 		super();
 		this.productId = productId;
 		this.locationId = locationId;
@@ -45,19 +44,19 @@ public class Inventory {
 		this.productId = productId;
 	}
 
-	public Timestamp getAvailOnSyncTime() {
+	public Date getAvailOnSyncTime() {
 		return availOnSyncTime;
 	}
 
-	public void setAvailOnSyncTime(Timestamp availOnSyncTime) {
+	public void setAvailOnSyncTime(Date availOnSyncTime) {
 		this.availOnSyncTime = availOnSyncTime;
 	}
 
-	public BigDecimal getAvailOnHand() {
+	public Double getAvailOnHand() {
 		return availOnHand;
 	}
 
-	public void setAvailOnHand(BigDecimal availOnHand) {
+	public void setAvailOnHand(Double availOnHand) {
 		this.availOnHand = availOnHand;
 	}
 
